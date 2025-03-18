@@ -1,0 +1,82 @@
+.conduct-exam-container {
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .start-exam-btn, .end-exam-btn {
+    padding: 15px 25px;
+    font-size: 18px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+    margin: 10px;
+  }
+  
+  .start-exam-btn {
+    background-color: #28a745;
+  }
+  
+  .start-exam-btn:hover {
+    background-color: #218838;
+  }
+  
+  .end-exam-btn {
+    background-color: #dc3545;
+  }
+  
+  .end-exam-btn:hover {
+    background-color: #c82333;
+  }
+  
+  .exam-timer {
+    font-size: 24px;
+    color: #000; /* Black text */
+    margin-top: 20px;
+  }
+  
+  .progress-bar {
+    width: 80%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px auto;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #ff0000;
+    transition: width 1s linear;
+  }
+  
+  #exam-content {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  
+  .proctoring-panel {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 10px;
+    width: 60%;
+    margin: 20px auto;
+    text-align: left;
+    font-size: 18px;
+    border-left: 5px solid #000; /* Black border */
+    color: #000; /* Black text */
+  }
+  
+  .proctoring-panel h4 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .exam-ended-message {
+    font-size: 22px;
+    font-weight: bold;
+    color: green;
+  }
+  
