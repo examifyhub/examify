@@ -1,0 +1,149 @@
+/* General Styling */
+.home-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 50px 0;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: black;
+    color: white;
+    padding: 80px 20px;
+    border-radius: 15px;
+    margin-bottom: 50px;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.cta-button {
+    background: white;
+    color: black;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid white;
+    border-radius: 8px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background: black;
+    color: white;
+    border: 2px solid white;
+}
+
+/* Feature Section */
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-box {
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+}
+
+.feature-box img {
+    width: 80px;
+    margin-bottom: 15px;
+}
+
+.feature-box h3 {
+    font-size: 1.5rem;
+    color: #0056b3;
+    margin-bottom: 10px;
+}
+
+.feature-box p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* About Section */
+.about-section {
+    margin-top: 60px;
+    padding: 40px;
+    background: #f9f9f9;
+    border-radius: 12px;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+}
+/* New Image Grid Section */
+.image-grid-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.image-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.image-grid img {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.image-grid img:hover {
+    transform: scale(1.05);
+}
+/* Feature Section Images */
+.feature-box img {
+    width: 150px;  /* Increase image size */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.feature-box img:hover {
+    transform: scale(1.1); /* Slight hover effect */
+}

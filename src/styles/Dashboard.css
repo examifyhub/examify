@@ -1,0 +1,150 @@
+.dashboard-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* Student Info */
+  .student-info {
+    display: flex;
+    align-items: center;
+    background: black;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .student-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .student-details p {
+    font-size: 14px;
+  }
+  
+  .student-details span {
+    font-weight: bold;
+    color: #ffce56;
+  }
+  
+  /* Recommended Exams */
+  .exam-recommendation h2 {
+    margin-top: 20px;
+  }
+  
+  .exam-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .exam-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .exam-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Pie Chart Section */
+  .chart-section {
+    margin-top: 30px;
+  }
+  
+  .chart-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .chart-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .chart-card:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Progress Bars */
+  .progress-bars {
+    margin-top: 15px;
+  }
+  
+  .progress-container {
+    margin-bottom: 10px;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+  }
+  /* Centering Pie Charts */
+.chart-section {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+  }
+  
+  .chart-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  /* Stylish Pie Chart Card */
+  .chart-card {
+    background: rgba(255, 255, 255, 0.2); /* Glassmorphism */
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 300px;
+  }
+  
+  .chart-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Pie Chart Title */
+  .chart-card h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: black;
+    font-weight: 600;
+  }
+  .student-details p {
+    color: white; /* Change text color to white */
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  .student-details span {
+    font-weight: bold;
+    color: #ffd700; /* Highlight values in gold for better visibility */
+  }
+  
