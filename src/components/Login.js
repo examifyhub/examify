@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-//import axios from 'axios';
 import '../styles/Auth.css';
 
 const Login = () => {
@@ -8,12 +7,12 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = async () => {
-  console.log("✅ Skipping login...");
-  localStorage.setItem("token", "dummy_token"); // Fake token
-  window.location.href = "/dashboard"; // Redirect directly
-};
-
+  const handleLogin = (e) => {
+    e.preventDefault();
+    console.log("✅ Skipping login...");
+    localStorage.setItem("token", "dummy_token"); // Fake token
+    navigate("/"); // ✅ Redirect to Home Page
+  };
 
   return (
     <div className="auth-page">
@@ -46,6 +45,11 @@ const Login = () => {
         </p>
       </div>
     </div>
+  );
+};
+
+export default Login;
+
   );
 };
 
