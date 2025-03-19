@@ -1,23 +1,20 @@
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000"; // Fallback to localhost for development
+const API_URL = process.env.REACT_APP_API_URL || "https://examify-do1h.onrender.com";
 
-const handleRegister = async () => {
+const handleLogin = async () => {
   try {
     const response = await axios.post(
-      `${API_URL}/api/register`,
+      `${API_URL}/api/login`,
       {
-        username: "testuser",
         email: "test@example.com",
         password: "password123"
       },
-      {
-        headers: { "Content-Type": "application/json" }
-      }
+      { headers: { "Content-Type": "application/json" } }
     );
 
-    console.log("✅ Registration successful:", response.data);
+    console.log("✅ Login successful:", response.data);
   } catch (error) {
-    console.error("❌ Registration failed:", error.response?.data || error.message);
+    console.error("❌ Login failed:", error.response?.data || error.message);
   }
 };
