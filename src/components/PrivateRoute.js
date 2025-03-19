@@ -1,12 +1,9 @@
 import React from "react";
-import { Navigate, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 const PrivateRoute = () => {
-  const token = localStorage.getItem("token"); // Get the stored token
-
-  console.log("Token in PrivateRoute:", token); // Debugging step
-
-  return token ? <Outlet /> : <Navigate to="/login" />;
+  console.log("✅ Skipping authentication in PrivateRoute.");
+  return <Outlet />; // Always allow access
 };
 
 export default PrivateRoute;
