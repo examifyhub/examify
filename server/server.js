@@ -66,21 +66,20 @@ app.post('/api/login', async (req, res) => {
   return res.json({ message: 'Login successful', user });
 });
 
-
-// ✅ Login Endpoint
+// ✅ Login Endpoint (Fixes duplicate issue)
 app.post('/api/login', async (req, res) => {
-  const { username, email, password } = req.body;
+  const { email, password } = req.body;
 
   try {
-    if (!password || (!username && !email)) {
-      return res.status(400).json({ message: 'Username or Email and Password are required' });
+    if (!email || !password) {
+      return res.status(400).json({ message: 'Email and Password are required' });
     }
 
-    const user = await User.findOne({ $or: [{ username }, { email }] });
-    if (!user) return res.status(401).json({ message: 'Invalid username or password' });
+    const user = await User.findOne({ email });
+    if (!user) return res.status(401).json({ message: 'Invalid email or password' });
 
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return res.status(401).json({ message: 'Invalid username or password' });
+    if (!isMatch) return res.status(401).json({ message: 'Invalid email or password' });
 
     const token = jwt.sign({ id: user._id }, SECRET_KEY, { expiresIn: '1h' });
 
@@ -90,6 +89,7 @@ app.post('/api/login', async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
+
 
 // ✅ Start Server
 app.listen(PORT, () => {
