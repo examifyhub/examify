@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import '../styles/Auth.css';
 
 const Register = () => {
@@ -9,19 +8,11 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleRegister = async (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
-    try {
-      await axios.post(`${process.env.REACT_APP_API_URL}/api/register`, {
-        username,
-        email,
-        password,
-      });
-      alert('Registration successful');
-      navigate('/login'); // Redirect after register
-    } catch (error) {
-      alert(error.response?.data?.message || 'Registration failed');
-    }
+    console.log("✅ Skipping registration...");
+    alert('Registration successful');
+    navigate("/"); // ✅ Redirect to Home Page
   };
 
   return (
@@ -66,3 +57,4 @@ const Register = () => {
 };
 
 export default Register;
+
