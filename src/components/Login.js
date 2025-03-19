@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+//import axios from 'axios';
 import '../styles/Auth.css';
 
 const Login = () => {
@@ -8,20 +8,12 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/login`, {
-        username,
-        password,
-      });
+  const handleLogin = async () => {
+  console.log("✅ Skipping login...");
+  localStorage.setItem("token", "dummy_token"); // Fake token
+  window.location.href = "/dashboard"; // Redirect directly
+};
 
-      localStorage.setItem('token', response.data.token);
-      navigate('/home');  // Redirect after login
-    } catch (error) {
-      alert(error.response?.data?.message || 'Login failed');
-    }
-  };
 
   return (
     <div className="auth-page">
