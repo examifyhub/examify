@@ -7,37 +7,20 @@ const Register = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-
-  // Use environment variable for API URL
-  const API_URL = process.env.REACT_APP_API_URL || 'https://examify-do1h.onrender.com';
 
   const handleRegister = async (e) => {
     e.preventDefault();
-
-    // Validate empty fields
-    if (!username || !email || !password) {
-      alert('All fields are required');
-      return;
-    }
-
-    setLoading(true); // Disable button while processing
-
     try {
-      await axios.post(`${API_URL}/api/register`, {
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/register`, {
         username,
         email,
         password,
       });
-
-      alert('Registration successful! Redirecting to login...');
-      navigate('/login'); // Redirect after successful registration
+      alert('Registration successful');
+      navigate('/login'); // Redirect after register
     } catch (error) {
-      console.error('Registration Error:', error);
       alert(error.response?.data?.message || 'Registration failed');
-    } finally {
-      setLoading(false); // Re-enable button
     }
   };
 
@@ -54,7 +37,6 @@ const Register = () => {
             className="auth-input"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            required
           />
           <input
             type="email"
@@ -62,7 +44,6 @@ const Register = () => {
             className="auth-input"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            required
           />
           <input
             type="password"
@@ -70,11 +51,8 @@ const Register = () => {
             className="auth-input"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            required
           />
-          <button className="auth-button" type="submit" disabled={loading}>
-            {loading ? 'Registering...' : 'Register'}
-          </button>
+          <button className="auth-button" type="submit">Register</button>
         </form>
         <p className="auth-switch">
           Already have an account?{' '}
