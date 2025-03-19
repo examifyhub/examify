@@ -8,11 +8,11 @@ const bcrypt = require('bcryptjs');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const SECRET_KEY = process.env.SECRET_KEY || 'your_secret_key_here';
+const SECRET_KEY = process.env.SECRET_KEY || 'fallback_secret';
 
 // Middleware
 app.use(cors({
-  origin: '*', // Allow all origins (change for production)
+  origin: '*', // Change this to frontend URL in production
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
@@ -40,11 +40,9 @@ app.post('/api/register', async (req, res) => {
   const { username, email, password } = req.body;
 
   try {
-    // Check if email or username already exists
     const existingUser = await User.findOne({ $or: [{ email }, { username }] });
     if (existingUser) return res.status(400).json({ message: 'User already exists' });
 
-    // Hash password and save user
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = new User({ username, email, password: hashedPassword });
     await newUser.save();
@@ -58,18 +56,15 @@ app.post('/api/register', async (req, res) => {
 
 // Login Endpoint
 app.post('/api/login', async (req, res) => {
-  const { username, email, password } = req.body;
+  const { username, password } = req.body;
 
   try {
-    // Find user by either email or username
-    const user = await User.findOne({ $or: [{ username }, { email }] });
+    const user = await User.findOne({ $or: [{ username }, { email: username }] });
     if (!user) return res.status(401).json({ message: 'Invalid username or password' });
 
-    // Compare password
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(401).json({ message: 'Invalid username or password' });
 
-    // Generate token
     const token = jwt.sign({ id: user._id }, SECRET_KEY, { expiresIn: '1h' });
     res.status(200).json({ message: 'Login successful', token });
   } catch (error) {
