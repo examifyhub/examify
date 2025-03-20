@@ -38,3 +38,37 @@
     color: white;
   }
   
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        width: 180px;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 3px 5px rgba(255, 255, 255, 0.2);
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .navbar-links a {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
