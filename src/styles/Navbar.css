@@ -21,20 +21,20 @@
 /* Navbar Links */
 .navbar-links {
     display: flex;
-    gap: 12px; /* Better spacing */
+    gap: 12px;
 }
 
 .navbar-links a {
     color: #fff;
     text-decoration: none;
-    border: 1px solid #fff; /* Thinner border */
-    padding: 8px 12px; /* Slightly larger for better UX */
-    font-size: 14px; 
+    border: 1px solid #fff;
+    padding: 8px 12px;
+    font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
     display: flex;
     align-items: center;
-    gap: 5px; /* Space for icons */
+    gap: 5px;
     transition: 0.3s ease-in-out;
     border-radius: 5px;
 }
@@ -42,7 +42,7 @@
 /* Hover Effect */
 .navbar-links a:hover {
     background-color: #fff;
-    color: #000; /* Black text on hover */
+    color: #000;
 }
 
 /* Mobile Menu Icon */
@@ -80,5 +80,3 @@
         font-size: 14px;
     }
 }
-
-  
