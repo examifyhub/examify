@@ -2,7 +2,6 @@
     background-color: transparent; /* Transparent navbar */
     color: black;/* White text */
     padding: 10px 18px;
-    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
