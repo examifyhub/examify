@@ -61,3 +61,15 @@
   bottom: 0;
   width: 100%;
 }
+/* Fix navbar collision */
+body {
+    padding-top: 80px; /* Adjust according to navbar height */
+    overflow-x: hidden; /* Prevents horizontal scrolling issues */
+}
+
+/* If specific pages still overlap, add this */
+.page-content {
+    margin-top: 80px; /* Push content below navbar */
+    padding: 20px; /* Optional padding for better spacing */
+}
+
