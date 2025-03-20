@@ -1,111 +1,72 @@
-/* ✅ Navbar Styling */
 .navbar {
-    background-color: transparent; /* Transparent navbar */
-    color: black; /* Black text */
-    padding: 12px 20px;
+    position: fixed; /* Keep navbar fixed at top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent effect */
+    backdrop-filter: blur(10px); /* Adds a blurred background */
+    color: black;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 16px;
     font-weight: bold;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    backdrop-filter: blur(10px); /* Subtle blur effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensures navbar is always on top */
 }
 
-/* ✅ Fix Home Page Collision */
+/* Space for navbar to prevent collision */
 body {
-    padding-top: 70px; /* Ensures navbar doesn't overlap content */
+    padding-top: 70px; /* Adjust based on navbar height */
 }
 
-/* ✅ Logo Styling */
-.logo-image {
-    height: 50px; /* Adjust size */
+/* Logo styling */
+.navbar-logo img {
+    height: 40px; /* Adjust based on your logo size */
+    width: auto;
 }
 
-/* ✅ Navbar Links */
+/* Fix Navbar Links */
 .navbar-links {
     display: flex;
     gap: 15px;
-    list-style: none; /* Removes bullet dots */
 }
 
-/* ✅ Navbar Links Styling */
 .navbar-links a {
-    color: black;
+    color: black; /* Ensure black color */
     text-decoration: none;
-    border: 2px solid black;
-    padding: 8px 12px;
+    border: 1px solid black;
+    padding: 8px 14px;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: 0.3s ease-in-out;
     border-radius: 5px;
+    transition: 0.3s ease-in-out;
 }
 
-/* ✅ Hover Effect */
 .navbar-links a:hover {
     background-color: black;
     color: white;
 }
 
-/* ✅ Logout Button */
-.logout-button {
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-}
-
-.logout-button:hover {
-    background-color: white;
-    color: black;
-}
-
-/* ✅ Mobile Menu Icon */
-.menu-icon {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: black;
-}
-
-/* ✅ Responsive Navbar */
+/* Responsive for Mobile */
 @media (max-width: 768px) {
-    .menu-icon {
-        display: block;
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
     }
 
     .navbar-links {
-        display: none;
         flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: rgba(255, 255, 255, 0.9);
-        width: 180px;
-        padding: 10px;
-        border-radius: 5px;
-        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .navbar-links.active {
-        display: flex;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
     }
 
     .navbar-links a {
-        padding: 10px;
-        font-size: 14px;
-    }
-}
-/* Fix Mobile Menu Cutoff */
-@media (max-width: 768px) {
-    .navbar-links {
-        max-height: 300px; /* Prevents cutting off last tab */
-        overflow-y: auto; /* Allows scrolling if needed */
+        display: block;
+        width: 90%;
+        text-align: center;
     }
 }
