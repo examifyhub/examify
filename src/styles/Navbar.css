@@ -1,7 +1,7 @@
-/* Navbar Container */
+/* ✅ Navbar Styling */
 .navbar {
-    background-color: white; 
-    color: black; /* Black text/icons */
+    background-color: transparent; /* Transparent navbar */
+    color: black; /* Black text */
     padding: 12px 20px;
     display: flex;
     justify-content: space-between;
@@ -12,23 +12,29 @@
     top: 0;
     width: 100%;
     z-index: 1000;
+    backdrop-filter: blur(10px); /* Subtle blur effect */
 }
 
-/* Logo Styling */
+/* ✅ Fix Home Page Collision */
+body {
+    padding-top: 70px; /* Ensures navbar doesn't overlap content */
+}
+
+/* ✅ Logo Styling */
 .logo-image {
-    height: 40px; /* Adjust size */
+    height: 50px; /* Adjust size */
 }
 
-/* Navbar Links */
+/* ✅ Navbar Links */
 .navbar-links {
     display: flex;
     gap: 15px;
-    list-style: none; /* Removes the dot from icons */
+    list-style: none; /* Removes bullet dots */
 }
 
-/* Navbar Links Styling */
+/* ✅ Navbar Links Styling */
 .navbar-links a {
-    color: black; /* Black color for text */
+    color: black;
     text-decoration: none;
     border: 2px solid black;
     padding: 8px 12px;
@@ -42,13 +48,13 @@
     border-radius: 5px;
 }
 
-/* Hover Effect */
+/* ✅ Hover Effect */
 .navbar-links a:hover {
     background-color: black;
     color: white;
 }
 
-/* Logout Button */
+/* ✅ Logout Button */
 .logout-button {
     background-color: black;
     color: white;
@@ -60,15 +66,15 @@
     color: black;
 }
 
-/* Mobile Menu Icon */
+/* ✅ Mobile Menu Icon */
 .menu-icon {
     display: none;
     font-size: 24px;
     cursor: pointer;
-    color: black; /* Icon is black */
+    color: black;
 }
 
-/* Responsive Navbar */
+/* ✅ Responsive Navbar */
 @media (max-width: 768px) {
     .menu-icon {
         display: block;
