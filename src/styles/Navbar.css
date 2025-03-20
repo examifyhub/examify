@@ -1,48 +1,63 @@
 /* Navbar Container */
 .navbar {
-    background-color: #000; /* Black background */
-    color: #fff; /* White text */
+    background-color: transparent; /* Transparent Navbar */
+    color: black; /* Black text/icons */
     padding: 12px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 16px;
     font-weight: bold;
-    box-shadow: 0 3px 5px rgba(255, 255, 255, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
-/* Logo */
-.navbar-logo {
-    font-size: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
+/* Logo Styling */
+.logo-image {
+    height: 40px; /* Adjust size */
 }
 
 /* Navbar Links */
 .navbar-links {
     display: flex;
-    gap: 12px;
+    gap: 15px;
+    list-style: none; /* Removes the dot from icons */
 }
 
+/* Navbar Links Styling */
 .navbar-links a {
-    color: #fff;
+    color: black; /* Black color for text */
     text-decoration: none;
-    border: 1px solid #fff;
+    border: 2px solid black;
     padding: 8px 12px;
     font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
     transition: 0.3s ease-in-out;
     border-radius: 5px;
 }
 
 /* Hover Effect */
 .navbar-links a:hover {
-    background-color: #fff;
-    color: #000;
+    background-color: black;
+    color: white;
+}
+
+/* Logout Button */
+.logout-button {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+}
+
+.logout-button:hover {
+    background-color: white;
+    color: black;
 }
 
 /* Mobile Menu Icon */
@@ -50,6 +65,7 @@
     display: none;
     font-size: 24px;
     cursor: pointer;
+    color: black; /* Icon is black */
 }
 
 /* Responsive Navbar */
@@ -64,11 +80,11 @@
         position: absolute;
         top: 60px;
         right: 0;
-        background: rgba(0, 0, 0, 0.9);
+        background: rgba(255, 255, 255, 0.9);
         width: 180px;
         padding: 10px;
         border-radius: 5px;
-        box-shadow: 0 3px 5px rgba(255, 255, 255, 0.2);
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
     }
 
     .navbar-links.active {
