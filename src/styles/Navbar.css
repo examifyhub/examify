@@ -102,3 +102,10 @@ body {
         font-size: 14px;
     }
 }
+/* Fix Mobile Menu Cutoff */
+@media (max-width: 768px) {
+    .navbar-links {
+        max-height: 300px; /* Prevents cutting off last tab */
+        overflow-y: auto; /* Allows scrolling if needed */
+    }
+}
