@@ -1,6 +1,6 @@
 .navbar {
     background-color: transparent; /* Transparent navbar */
-    color: black;/* White text */
+    color: black;
     padding: 10px 18px;
     display: flex;
     justify-content: space-between;
@@ -22,9 +22,9 @@
   }
   
   .navbar-links a {
-    color: #fff;
+    color: black;
     text-decoration: none;
-    border: 1px solid #fff; /* Thinner border */
+    border: 1px solid black; /* Thinner border */
     padding: 6px 10px; /* Smaller button */
     font-size: 13px; /* Slightly smaller font */
     font-weight: 500;
@@ -34,7 +34,7 @@
   }
   
   .navbar-links a:hover {
-    background-color: #fff;
-    color: #000; /* Black text on hover */
+    background-color: black;
+    color: white;
   }
   
