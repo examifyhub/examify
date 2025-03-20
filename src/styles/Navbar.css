@@ -1,6 +1,6 @@
 /* Navbar Container */
 .navbar {
-    background-color: transparent; /* Transparent Navbar */
+    background-color: white; 
     color: black; /* Black text/icons */
     padding: 12px 20px;
     display: flex;
