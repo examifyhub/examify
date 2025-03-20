@@ -1,72 +1,50 @@
+/* Navbar Styles */
 .navbar {
-    position: fixed; /* Keep navbar fixed at top */
+    position: fixed; /* Fix navbar at top */
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.1); /* Transparent effect */
-    backdrop-filter: blur(10px); /* Adds a blurred background */
-    color: black;
-    padding: 10px 20px;
+    height: 70px; /* Increased height */
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+    backdrop-filter: blur(10px); /* Blur effect for better visibility */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 16px;
-    font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* Ensures navbar is always on top */
+    padding: 10px 30px;
+    z-index: 1000; /* Ensure navbar stays above content */
 }
 
-/* Space for navbar to prevent collision */
-body {
-    padding-top: 70px; /* Adjust based on navbar height */
-}
-
-/* Logo styling */
+/* Logo Styling */
 .navbar-logo img {
-    height: 40px; /* Adjust based on your logo size */
+    height: 60px; /* Increased logo size */
     width: auto;
 }
 
-/* Fix Navbar Links */
+/* Navbar Links */
 .navbar-links {
     display: flex;
-    gap: 15px;
+    gap: 20px;
+    align-items: center;
 }
 
 .navbar-links a {
-    color: black; /* Ensure black color */
+    color: black; /* Black text */
     text-decoration: none;
-    border: 1px solid black;
-    padding: 8px 14px;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
-    text-transform: uppercase;
-    border-radius: 5px;
+    border: 2px solid black;
+    padding: 10px 15px;
+    border-radius: 6px;
     transition: 0.3s ease-in-out;
 }
 
+/* Hover effect */
 .navbar-links a:hover {
     background-color: black;
     color: white;
 }
 
-/* Responsive for Mobile */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .navbar-links {
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    .navbar-links a {
-        display: block;
-        width: 90%;
-        text-align: center;
-    }
+/* Fix page content overlap */
+.page-content {
+    margin-top: 80px; /* Push content below navbar */
 }
