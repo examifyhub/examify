@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";  // Navigation hook
 import "../styles/Recommendation.css";
 
 // ✅ Import images correctly
@@ -43,6 +44,13 @@ const recommendedExams = [
 ];
 
 function Recommendation() {
+  const navigate = useNavigate();
+
+  const handleExamClick = (examTitle) => {
+    // Navigate to ConductExam page with selected exam title as state
+    navigate("/conduct-exam", { state: { examTitle } });
+  };
+
   return (
     <div className="recommendation-container">
       <h1>Unlock Your Full Potential!</h1>
@@ -50,8 +58,13 @@ function Recommendation() {
 
       <div className="exams-container">
         {recommendedExams.map((exam, index) => (
-          <div key={index} className="exam-box">
-            <img src={exam.image} alt={exam.title} className="exam-image"/>
+          <div 
+            key={index} 
+            className="exam-box" 
+            onClick={() => handleExamClick(exam.title)}
+            style={{ cursor: "pointer" }}  // Add pointer cursor for better UX
+          >
+            <img src={exam.image} alt={exam.title} className="exam-image" />
             <h3>{exam.title}</h3>
             <ul>
               {exam.tests.map((test, i) => (
