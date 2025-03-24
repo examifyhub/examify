@@ -1,83 +1,47 @@
- .conduct-exam-container {
-    text-align: center;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .start-exam-btn, .end-exam-btn {
-    padding: 15px 25px;
-    font-size: 18px;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: 0.3s;
-    margin: 10px;
-  }
-  
-  .start-exam-btn {
-    background-color: #28a745;
-  }
-  
-  .start-exam-btn:hover {
-    background-color: #218838;
-  }
-  
-  .end-exam-btn {
-    background-color: #dc3545;
-  }
-  
-  .end-exam-btn:hover {
-    background-color: #c82333;
-  }
-  
-  .exam-timer {
-    font-size: 24px;
-    color: #ff0000;
-    margin-top: 20px;
-  }
-  
-  .progress-bar {
-    width: 80%;
-    height: 10px;
-    background-color: #ddd;
-    border-radius: 5px;
-    overflow: hidden;
-    margin: 10px auto;
-  }
-  
-  .progress {
-    height: 100%;
-    background-color: #ff0000;
-    transition: width 1s linear;
-  }
-  
-  #exam-content {
-    margin-top: 20px;
-    font-size: 20px;
-  }
-  
-  .proctoring-panel {
-    background: #f4f4f4;
-    padding: 15px;
-    border-radius: 10px;
-    width: 60%;
-    margin: 20px auto;
-    text-align: left;
-    font-size: 18px;
-    border-left: 5px solid #ff0000;
-  }
-  
-  .proctoring-panel h4 {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  .exam-ended-message {
-    font-size: 22px;
-    font-weight: bold;
-    color: green;
-  }
-.h3,p{
-    color: black;
-}  
+.conduct-exam-container {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+}
+
+.exam-timer {
+  font-size: 32px;
+  color: #007bff;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #ddd;
+  margin: 20px 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: #28a745;
+  transition: width 0.3s;
+}
+
+.sound-detection-panel {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+
+.sound-graph {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.end-exam-btn, .start-exam-btn {
+  padding: 12px 24px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
