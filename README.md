@@ -9,9 +9,10 @@ This project is an AI-powered web platform designed to conduct cheat-free online
 ## Tech Stack
 - Frontend: React.js
 - Backend: Node.js, Express.js
-- Machine Learning: OpenCV & Dlib (for eye tracking), PyAudio or WebRTC (for sound detection)
-- Database: MongoDB
-- Hosting: Backend on Render, Frontend on Vercel
+- Database: Firebase
+- Auth: Firebase Authentication
+- Storage: Firebase Storage
+- Hosting: Google Cloud
 
 ---
 Have an idea to improve Examify? Fork the repo and contribute! 🚀
