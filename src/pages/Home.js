@@ -7,10 +7,6 @@ import extraImg1 from "../assets/eyetracking.jpeg";
 import extraImg2 from "../assets/sounddetection.jpg";
 import extraImg3 from "../assets/devicedetection.png";
 
-// Feature Section Images
-import examImage1 from "../assets/anti-cheat.png";
-import examImage2 from "../assets/exam-security.png";
-import examImage3 from "../assets/online-exam.png";
 
 const Home = () => {
   const navigate = useNavigate();

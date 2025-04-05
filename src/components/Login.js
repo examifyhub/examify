@@ -1,17 +1,43 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { auth } from '../firebaseConfig';  // ✅ Firebase auth import
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import '../styles/Auth.css';
 
 const Login = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    console.log("✅ Skipping login...");
-    localStorage.setItem("token", "dummy_token"); // Fake token
-    navigate("/"); // ✅ Redirect to Home Page
+
+    if (!email || !password) {
+      setError('Email and password are required!');
+      return;
+    }
+
+    try {
+      // ✅ Firebase Authentication
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      console.log("✅ Login Successful:", user);
+
+      // ✅ Store token in localStorage
+      const token = await user.getIdToken();
+      localStorage.setItem('token', token);
+
+      alert('Login successful!');
+      
+      // ✅ Navigate to Home Page
+      navigate('/');
+
+    } catch (error) {
+      console.error("❌ Login Failed:", error.message);
+      setError(error.message || "Invalid email or password. Please try again.");
+    }
   };
 
   return (
@@ -19,14 +45,18 @@ const Login = () => {
       <div className="auth-box">
         <h1 className="project-title">Examify</h1>
         <p className="quote">"Empower Your Knowledge, Elevate Your Success"</p>
+        
         <h2>Login</h2>
+
+        {error && <p style={{ color: 'red' }}>{error}</p>}  {/* ✅ Display Error */}
+
         <form className="auth-form" onSubmit={handleLogin}>
           <input
-            type="text"
-            placeholder="Username"
+            type="email"
+            placeholder="Email"
             className="auth-input"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <input
             type="password"
@@ -37,6 +67,7 @@ const Login = () => {
           />
           <button className="auth-button" type="submit">Login</button>
         </form>
+
         <p className="auth-switch">
           Don't have an account?{' '}
           <span onClick={() => navigate('/register')} style={{ cursor: 'pointer', textDecoration: 'underline' }}>
