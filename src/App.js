@@ -10,14 +10,19 @@ import Login from "./components/Login"; // ✅ Login is in components, not pages
 import Register from "./components/Register"; // ✅ Register is in components, not pages
 import Logout from "./components/Logout"; // ✅ Logout is in components, not pages
 import PrivateRoute from "./components/PrivateRoute"; // ✅ Ensures only logged-in users access protected routes
+import Intro from "./pages/Intro";
+import AuthRedirect from "./components/AuthRedirect";
 
-function App() {
+function App() { 
   return (
     <Router>
       <Routes>
         {/* Public Routes (Without Navbar & Footer) */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/intro" element={<Intro />} />
+        <Route path="/" element={<AuthRedirect />} />
+
 
         {/* Protected Routes (With Navbar & Footer) */}
         <Route element={<PrivateRoute />}>
@@ -33,7 +38,8 @@ function App() {
                     <Route path="/conduct-exam" element={<ConductExam />} />
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/logout" element={<Logout />} />
-                    <Route path="*" element={<Navigate to="/home" />} />
+                    <Route path="*" element={<Navigate to="/home" />} /> {/* fallback for unknown routes */}
+
                   </Routes>
                 </div>
                 <Footer />
